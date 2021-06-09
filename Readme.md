@@ -22,6 +22,7 @@ El módulo de __Machine Learning__ tiene como principales objetivos identificar,
 Fecha | Sesión | Tema                                                               | 
 ------| :----: | :----------------------------------------------------------------- | 
 07/06 | 1      | [Introducción a Machine Learning](Sesion-01/Readme.md)             |
+09/06 | 2      | [Separación, validación y evaluación para algoritmos de ML](Sesion-02/Readme.md) |
 
 
 <!--### Organización del módulo:

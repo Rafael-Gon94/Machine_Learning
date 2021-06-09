@@ -1,12 +1,20 @@
-# Sesión 02: Separación, validación y evaluación para algoritmos de ML  
+[`Machine Learning`](../Readme.md) > `Sesión 2`
 
-#### Objetivo: Construir algoritmos de separación de conjuntos de datos en entrenamiento / validación / prueba y algoritmos de evaluación de clasificadores de ML (clasificación binaria y multiclase).       
+## Sesión 02: Separación, validación y evaluación para algoritmos de ML 
+
+<img src="../imagenes/pizarron.png" align="right" height="100" width="100" hspace="10"> 
+
+### 1. Objetivos :dart:
+
+Construir algoritmos de separación de conjuntos de datos en entrenamiento / validación / prueba y algoritmos de evaluación de clasificadores de ML (clasificación binaria y multiclase).       
+
+### 2. Contenido :blue_book:   
 
 ¡Bienvenido a la segunda sesión de Machine Learning! En esta sesión nos enfocaremos enteramente en crear herramientas que nos serán útiles no solamente en lo que resta del curso, sino en cualquier momento que deseemos implementar Machine Learning.
 
-El primer tema que trataremos es el de separación de datos. A partir de este módulo comenzaremos a utilizar Python 3 constantemente, por lo que te recomiendo tener a la mano tu cuaderno de Jupyter. Te recomiendo que veas los ejemplos, pero que también hagas tus propias implementaciones. Recuerda, la programación es un asunto más de práctica que de memorización.
+El primer tema que trataremos es el de separación de datos. A partir de este módulo comenzaremos a utilizar __Python__ constantemente, por lo que te recomendamos tener a la mano tu cuaderno de __Jupyter__. Te recomendamos también que veas los ejemplos y te sugerimos hagas tus propias implementaciones. Recuerda, la programación es un asunto más de práctica que de memorización.
 
-## Separación de datos.
+#### <ins>Separación de datos</ins>
 
 Los algoritmos de Machine Learning van a aprender invariablemente de los datos que les proporcionemos. Los algoritmos constantemente van a estar ajustándose para adaptarse a los datos mostrados, sin embargo esto no tiene ninguna ciencia. Lo importante es que un algoritmo *pueda predecir y procesar datos que nunca antes ha visto*.
 
@@ -24,7 +32,7 @@ Un ejemplo de la vida real: Los automóviles con piloto automático han sido ext
 
 ![Automóviles tesla](imgassets/TeslaCars.png)
 
-> _ Si ordenas tu habitación y encuentras algo que nunca has visto antes, es probable que le tengas mucho miedo y que no quieras ni tocarlo. ¡Lo mismo pasa cuando un algoritmo no es capaz de clasificar algo!_
+> _Si ordenas tu habitación y encuentras algo que nunca has visto antes, es probable que le tengas mucho miedo y que no quieras ni tocarlo. ¡Lo mismo pasa cuando un algoritmo no es capaz de clasificar algo!_
 
 Lo mas común es que un científico de datos separe un conjunto de datos (también llamado *Dataset*) en tres fragmentos de forma aleatoria: 
 - **Partición de entrenamiento:** Una partición de entrenamiento servirá para que tu algoritmo se ajuste, entrene y aprenda lo más que pueda. 
@@ -35,26 +43,26 @@ Lo mas común es que un científico de datos separe un conjunto de datos (tambi�
 
 ![Particiones estándar](imgassets/Partitions1.png)
 
-### Malas particiones: ¿Qué pasa si tenemos una partición de entrenamiento reducida?
+##### Malas particiones: ¿Qué pasa si tenemos una partición de entrenamiento reducida?
 ![Particiones estándar](imgassets/BadPartitions.png)
 
 Cuando hay pocos datos de entrenamiento, tu algoritmo de Machine Learning corre el riesgo de fallar mucho en validaciones y pruebas. Si el algoritmo de aprendizaje se repite muchas veces, es posible que caigas en algo llamado *"Overfitting"* que es cuando un algoritmo se aprende excepcionalmente bien un conjunto muy pequeño de datos, sin embargo es incapaz de reconocer datos nuevos. 
 
 En general, va a tener un desempeño muy muy bajo.
 
-### Malas particiones: ¿Qué pasa si tenemos una partición de validación reducida?
+##### Malas particiones: ¿Qué pasa si tenemos una partición de validación reducida?
 
 Cuando hay una validación muy pequeña puede que no ocurra nada malo. Pero te darás cuenta de que tu algoritmo tuvo éxito o falló hasta que termine de entrenar y lo pruebes. Si no te das cuenta de que el entrenamiento va fallando, y esperaste varios días para obtener el resultado, quizás hayas perdido tu tiempo.
 
 Sin embargo, este no es el peor escenario. Si un algoritmo se entrena lo bastante rápido, no pasa nada si tienes una validación reducida (o de plano suprimes la validación). En el caso de que tu algoritmo tarde horas, días o incluso semanas en entrenar... Lo mejor será tener una buena cantidad de datos en validación, para evitar tener que esperar hasta que una catástrofe de tiempo perdido ocurra.
 
-### Malas particiones: ¿Qué pasa si tenemos una partición de pruebas reducida?
+##### Malas particiones: ¿Qué pasa si tenemos una partición de pruebas reducida?
 
 Este es el peor escenario posible. Una partición muy pequeña hará que no te des cuenta de si tu algoritmo es realmente inteligente o no. Pocos datos de referencia no sirven para tener una conclusión lo bastante eficaz, por lo que no sabrás qué tan listo es tu algoritmo y, en el peor escenario, podrías sobreestimarlo (creer que es mejor de lo que realmente es). 
 
 >Si implementas un algoritmo así, es **MUY** probable que falle a la larga. Esto es catastrófico para cualquier negocio o inclusive peligroso para aplicaciones que requieren precisión casi absoluta (como sistemas médicos). Advertido estás.
 
-### ¿Cuál es una buena partición entonces?
+##### ¿Cuál es una buena partición entonces?
 
 ![Particiones estándar](imgassets/Thinking.jpg)
 
@@ -70,7 +78,7 @@ Si tienes muchos datos (más de 400,000 datos podríamos considerarlos como much
 
 Si tu algoritmo entrena lo bastante rápido, puedes quitar la partición de validación y añadir esos datos a la partición de pruebas.
 
-### Creando particiones con Scikit Learn.
+##### Creando particiones con Scikit Learn.
 
 El método de creación de particiones es: 
 1. Primero crea una partición de entrenamiento: Scikit Learn separará aleatoriamente en dos partes el entrenamiento, con la proporción que le indiques.
@@ -78,12 +86,17 @@ El método de creación de particiones es:
 
 ![Particiones con Sci-kit Learn](imgassets/Partitions2.png)
 
-Para ver el código de cómo hacer una partición, sigue este link: [Ejemplo 01](Sesion-02/Ejemplo-01)
+Para ver el código de cómo hacer una partición, sigue este link: [**`Ejemplo 1`**](Ejemplo-01/Ejemplo01.ipynb)
 
-## Reto 01:
-> ¡Con este código [Reto 01](Sesion-02/Reto-01) utiliza y juega con la función de particionar! Prueba con diferentes combinaciones. Si tienes un dataset para tu proyecto, úsalo para separar los datos en tres grupos. **PROTIP:** Mantén está función entre tus códigos, porque será útil no sólo para este módulo, sino en general cuando hagas Machine Learning.
+> **Reto 01**   
+> Con el código del [**`Reto 01`**](Reto-01/Reto01.ipynb) como base, usa un dataset que tengas (proyecto) y realiza las siguientes separaciones:
+> - 60 - 10 - 30
+> - 50 - 20 - 30
+> - 70 - 0 - 30
 
-## Validación cruzada.
+---
+
+#### <ins>Validación cruzada</ins>
 
 Existe una falacia llamada ***Cherry Picking*** (o argumentos selectivos) que es algo muy común que suele hacerse con estudios científicos con poca ética: algunos eligen datos mas fáciles de clasificar para ensamblar el dataset de pruebas. 
 
@@ -120,12 +133,14 @@ Por ejemplo: 3-Fold significa que dividiste tu dataset en 3 partes (A, B, y C)
 
 Promedias los resultados de todas las rondas, y sabes qué tan bueno es tu algoritmo realmente. 
 
-Para verlo en acción, puedes echar un vistazo al [Ejemplo 02](Sesion-02/Ejemplo-02)
+Para verlo en acción, puedes echar un vistazo al [**`Ejemplo 02`**](Ejemplo-02/Ejemplo02.ipynb)
 
-## Reto 02:
-> ¡Intenta utilizar K-Fold en tu dataset en este [cuaderno!](Sesion-02/Reto-02) Nota que K-Fold va a requerir que hagas K entrenamientos más adelante. Verifica que los datos estén separados como lo esperas, e intenta con números pequeños (2-fold, o 3-fold)
+> **Reto 02**   
+> Con el código del [**`Reto 2`**](Reto-02/Reto02.ipynb) como base, usa un dataset que tengas (proyecto) y realiza un 2-fold y un 3-fold.
+>
+> Observa los resultados. Más adelante necesitaremos estos datos separados.
 
-## Leave-One-Out Cross Validation
+##### Leave-One-Out Cross Validation
 
 Leave-One-Out Cross Validation es llevar el K-fold al extremo: Utilizas todo tu dataset para entrenar, y solamente un dato para probar, sin embargo este dato va oscilando por todo el dataset, esto quiere decir que evalúas dato por dato hasta saber la precisión de tu algoritmo de Machine Learning. 
 
@@ -133,19 +148,23 @@ Leave-One-Out Cross Validation es llevar el K-fold al extremo: Utilizas todo tu 
 
 Al final sólo tienes que promediar todos los datos y obtienes qué tan bueno es tu algoritmo. Es bastante difícil de llevar a cabo, pero aquellos datos que tienen un mal desempeño puedes juntarlos y ver por qué no son fácilmente reconocibles. ¿Quizás esos datos tienen algo en común?
 
-Puedes verlo en acción en el [Ejemplo 03](Sesion-02/Ejemplo-03). Los códigos que tienes de K-Fold sirven para hacer el Leave-One-Out cross validation y la modificación es sumamente simple. 
+Puedes verlo en acción en el [**`Ejemplo 03`**](Ejemplo-03/Ejemplo03.ipynb). Los códigos que tienes de K-Fold sirven para hacer el Leave-One-Out cross validation y la modificación es sumamente simple. 
 
 El principal problema de Leave One Out Cross Validation (LOOCV) es que si tienes 10,000 muestras, tendrás que entrenar 10,000 veces para obtener un resultado concluyente. Esto no es un problema si tu entrenamiento es rápido, pero si el entrenamiento dura 10 segundos, con 10,000 muestras... ¡haz cuentas!
 
-$10,000\ muestras \times 10\ segundos = 100,000s = 27.777\ hrs$
+`10,000 muestras * 10 segundos = 100,000s = 27.777hrs`
 
 ![Tu dale, aqui te espero](imgassets/waiting.jpg)
 
 
-## Reto 03:
-> Haz que tu dataset se separe con Leave-One-Out Cross validation en este [cuaderno!](Sesion-02/Reto-03) Puedes modificar la prueba para que tenga más de un dato, si tienes 10,000 datos...
+>**Reto 03**   
+> Con el código del [**`Reto 3`**](Reto-03/Reto03.ipynb), usa un dataset que tengas (proyecto) y genera un LOOCV.
+>
+> Observa los resultados. Más adelante necesitaremos estos datos separados.
 
-## Matriz de confusión: Qué tan listo es tu algoritmo.
+---
+
+#### <ins>Matriz de confusión: Qué tan listo es tu algoritmo</ins>
 
 ¿Cómo saber si tu algoritmo de ML es realmente inteligente? Requieres siempre mediciones objetivas y numéricas que te digan qué tan bueno es tu algoritmo realmente para lo que estás haciendo. Un buen método para saber qué tan bueno es, es por medio de la matriz de confusión. 
 
@@ -165,34 +184,46 @@ El caso más sencillo es con la clasificación binaria. Las columnas representan
 
 4. El número de **falsos negativos (FN):** La cantidad de veces que tu algoritmo de ML dijo que un dato era negativo y realmente era positivo
 
-Para poner un ejemplo simple de cómo opera esto, puedes revisar éste [Ejemplo](Sesion-02/Ejemplo-04)
+Para poner un ejemplo simple de cómo opera esto, puedes revisar éste [**`Ejemplo 4`**](Ejemplo-04/Ejemplo04.ipynb)
 
 Esta matriz de confusión funciona para múltiples clases: la diagonal son los valores donde tu algoritmo acertó, y la matriz de confusión siempre será una matriz cuadrada. Si hay un valor inusualmente alto en los otros campos, quizá debas revisar si algo sucede que hace que las clases se confundan.
 
 ![Matriz de confusión multiclase](imgassets/MultiConfMat.png)
 
-> *Esto no es tan raro como creerías: hace unos años escribí un artículo científico donde se reporta que esto pasa con imágenes satelitales: https://ipn.elsevierpure.com/es/publications/classification-of-urban-aerial-images-a-comparison-between-low-se *
-
-## Métricas de desempeño de Machine Learning
+##### Métricas de desempeño de Machine Learning
 
 Habiendo generado la cantidad de verdaderos positivos (TP), verdaderos negativos (TN), falsos positivos (FP) y falsos negativos (FN), podemos generar una gran cantidad de métricas que nos ayudarán a ver la calidad de un algoritmo de ML y saber qué esperar de él. 
 
-El primero y más importante se llama precisión (o Accuracy), y se calcula de la siguiente manera:
+1. Precisión: De todas las clasificaciones positivas que hicimos, ¿cuántas de ésas eran en realidad positivas?
+   
+   *precision = VP / (VP + FP)*
 
-$Accuracy=\frac{TP+TN}{Numero\ de\ muestras} = \frac{TP+TN}{TP+TN+FP+FN}$
+1. Exactitud: Del total de clasificaciones que hicimos, ¿cuántas fueron clasificadas correctamente?
+   
+   *exactitud = (VP + VN) / (VP + FN + FP + VN)*
 
-El segundo se llama Sensibilidad (Sensitivity) y dice qué tan bueno es tu algoritmo para detectar positivos. Se calcula con:
+1. Sensibilidad: De todas las clasificaciones positivas que había en realidad, ¿cuántas fueron clasificadas correctamente como positivas?
+   
+   *sensibilidad = VP / (VP + FN)*
 
-$Sensibilidad=\frac{TP}{TP+FN}$
+1. Especificidad: De todas las clasificaciones negativas que había en realidad, ¿cuántas fueron clasificadas correctamente como negativas?
+   
+   *especificidad = VN / (VN + FP)*
 
-Y finalmente, la especificidad (Specificity) te dice qué tan bueno es tu algoritmo para detectar valores negativos y se calcula con:
 
-$Especificidad=\frac{TN}{TN+FP}$
-
+Queremos que todos estos valores sean lo más cercanos posibles a 1.
 
 Como podrás haber imaginado, esto no funciona para una matriz multiclase, por lo que para calcular la precisión (o accuracy) deberás sumar la diagonal de la matriz multiclase y dividirlo entre el número de muestras. 
 
-$Accuracy=\frac{\sum{Diagonal}}{Numero\ de\ muestras}$
+>**Reto 04**   
+> Revisa el código del [**`Reto 4`**](Reto-04/Reto04.ipynb) y completa la función que calcula la exactitud del modelo.
+>
+> Ejecuta todas las celdas y con base en la impresión obtenida responde... ¿Qué puedes decir de los datos obtenidos.
 
-## Reto 04:
-> Utiliza el [siguiente código](Sesion-02/Reto-04) y genera una matriz de confusión. Con ello, calcula la precisión, sensibilidad y especificidad. Te recomiendo que mantengas estos códigos en un archivo de Python para que puedas importarlos después, ya que a partir de la siguiente sesión utilizaremos mucho estas métricas y la separación de clases.
+### 3. Postwork :memo:
+
+[**`Postwork Sesión 2`**](postwork.pdf)
+
+<br/>
+
+[`Anterior`](../Sesion-01/Readme.md) | [`Siguiente`](../Sesion-03/Readme.md)
