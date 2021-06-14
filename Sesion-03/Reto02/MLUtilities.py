@@ -21,18 +21,11 @@ def clasificarPorCentroides(muestras, centroides):
     return resultado
 
 def separarDatos(muestras, valoresEsperados, valorAFiltrar):
-    indices = np.where(valoresEsperados == valorAFiltrar)
-    return muestras[indices], valoresEsperados[indices]
+    # Aquí va su código.
 
 def obtenerModa(resultados):
     moda = (stats.mode(resultados)[0]).reshape(-1)
     return moda[0]
 
 def obtenerAccuracy_kmedias(muestras, centroides):
-    numMuestras = muestras.shape[0]
-    resultados = clasificarPorCentroides(muestras, centroides)
-    moda = obtenerModa(resultados)
-    indicesErrores = np.where(resultados != moda)
-    cantidadErrores = len(resultados[indicesErrores])
-    accuracy = ((numMuestras - cantidadErrores) / numMuestras) *100
-    return accuracy
+    # Aquí va su código.

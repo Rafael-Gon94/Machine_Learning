@@ -23,15 +23,10 @@ Fecha | Sesión | Tema                                                          
 ------| :----: | :----------------------------------------------------------------- | 
 07/06 | 1      | [Introducción a Machine Learning](Sesion-01/Readme.md)             |
 09/06 | 2      | [Separación, validación y evaluación para algoritmos de ML](Sesion-02/Readme.md) |
+14/06 | 3      | [Algoritmos no supervisados](Sesion-03/Readme.md)                  |
 
 
 <!--### Organización del módulo:
-
- - [Sesión 1: Introducción a Machine Learning ](./Sesion-01/Readme.md)
-
- - [Sesión 2: Separación, validación y evaluación para algoritmos de ML ](./Sesion-02)
-
- - [Sesión 3: Algoritmos no supervisados ](./Sesion-03)
 
  - [Sesión 4: Problemas de regresión ](./Sesion-04)
 
