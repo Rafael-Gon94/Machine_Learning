@@ -15,6 +15,10 @@ El módulo de __Machine Learning__ tiene como principales objetivos identificar,
 
 ### Material adicional :books:
 
+:link: [Elbow method of K-means clustering algorithm](https://medium.com/analytics-vidhya/elbow-method-of-k-means-clustering-algorithm-a0c916adc540)
+
+:link: [Correlaciones y Regresión Linear Simple](https://github.com/manu-msr/beduadp/blob/master/sesion04/README.md)
+
 ### Agenda :date:
 
 *7 de junio al 7 de julio de 2021*
@@ -24,6 +28,7 @@ Fecha | Sesión | Tema                                                          
 07/06 | 1      | [Introducción a Machine Learning](Sesion-01/Readme.md)             |
 09/06 | 2      | [Separación, validación y evaluación para algoritmos de ML](Sesion-02/Readme.md) |
 14/06 | 3      | [Algoritmos no supervisados](Sesion-03/Readme.md)                  |
+16/06 | 4      | [Problemas de regresión](Sesion-04/Readme.md)                      |
 
 
 <!--### Organización del módulo:

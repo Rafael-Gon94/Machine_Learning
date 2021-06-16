@@ -1,10 +1,20 @@
-# Sesión 04: Problemas de regresión 
+[`Machine Learning`](../Readme.md) > `Sesión 4`
 
-#### Objetivo: Construir algoritmos que permitan predecir comportamientos, tanto en series de tiempo como con características, por medio de regresores lineales y polinomiales.  
+## Sesión 04: Problemas de regresión 
+
+<img src="../imagenes/pizarron.png" align="right" height="100" width="100" hspace="10"> 
+
+### 1. Objetivos :dart:
+
+Construir algoritmos que permitan predecir comportamientos, tanto en series de tiempo como con características, por medio de regresores lineales y polinomiales. 
+
+### 2. Contenido :blue_book:  
 
 ¡Bienvenidos a la Sesión 04! En esta sesión platicaremos acerca de las predicciones por medio de regresión y lo abordaremos como un entrenamiento supervisado. Para ello, lo primero será definir qué es la regresión. 
 
-## Regresión Lineal
+---
+
+#### <ins>Regresión Lineal</ins>
 
 Veamos un ejemplo sencillo y a partir de él construyamos las definición de regresión: Sabemos bien que las horas de estudio y las calificaciones de un examen tienen mucho que ver: A mayor cantidad de horas de estudio, mejores calificaciones podrías tener en un examen. 
 
@@ -27,7 +37,9 @@ Recordando un poco las clases de geometría de la secundaria, en la regresión l
 
 ![linRegression2](imgassets/linregression2.gif)
 
-## Algoritmos supervisados: Ventajas y desventajas
+---
+
+#### <ins>Algoritmos supervisados: Ventajas y desventajas</ins>
 
 Dado que este es el primer algoritmo supervisado que vamos a tratar, hay que ver algunas ventajas y desventajas de los algoritmos supervisados. 
 
@@ -41,7 +53,9 @@ Dado que este es el primer algoritmo supervisado que vamos a tratar, hay que ver
 - Los algoritmos están vinculados a las entradas y salidas que les entregues. Si le entregas datos de K clases, solamente podrá reconocer esas K clases y no podrá lidiar con clases nuevas. 
 - Meter pocos datos te llevará a malas clasificaciones y a mínimos locales (como habíamos platicado en las sesiones anteriores).
 
-## Aplicaciones y fundamentos de entrenamiento
+---
+
+#### <ins>Aplicaciones y fundamentos de entrenamiento</ins>
 
 La regresión tiene un montón de aplicaciones en varias áreas, por ejemplo: 
 - Predicción de ventas y desempeño
@@ -61,7 +75,9 @@ Un regresor lineal recibe de entrada los datos que tu desees, y obtiene de salid
 
 Entonces, para obtener una herramienta que te ayude a predecir de un dato a partir de otros, lo que tienes que obtener son los pesos sinápticos correctos. El primer paso para obtener los pesos sinápticos consiste en saber qué tan equivocados estamos. Cuando sepamos eso, podemos corregir los pesos sinápticos como un descenso en gradiente. 
 
-## Errores y ajustes de pesos sinápticos
+---
+
+#### <ins>Errores y ajustes de pesos sinápticos</ins>
 
 Cuando hacemos la tarea de clasificación, utilizamos positivos verdaderos, negativos verdaderos, falsos positivos y falsos negativos. Sin embargo, eso es útil en clasificación, mas no en predicción. 
 
@@ -91,7 +107,9 @@ Sé que han sido muchas matemáticas. Por ende, es importante que dejes que esto
 
 ![psyduck](imgassets/psyduck.gif)
 
-## Ejemplos de predicción en costos de casas
+---
+
+#### <ins>Ejemplos de predicción en costos de casas</ins>
 
 Para empezar a tratar la predicción, vamos a utilizar un ejemplo de una empresa de bienes raíces que busca saber cuánto cuesta una casa. Su objetivo es obtener el valor promedio de las casas ocupadas (en miles de USD) y para ello ha recopilado los siguientes datos:
 
@@ -117,15 +135,18 @@ Recordemos que el regresor lineal va a predecir precios y para ello va a recibir
 
 ![regressor housing](imgassets/regressorhousing.png)
 
-Para ello, vamos a realizar el entrenamiento del regresor con el siguiente [ejemplo.](Ejemplo01/Ejemplo01.ipynb)
+Para ello, vamos a realizar el entrenamiento del regresor con el siguiente ejemplo:
 
-## Reto 01:
->![gypsy](imgassets/gypsy.jpg)
-> Toma el código del [ejemplo 01](Ejemplo01/Ejemplo01.ipynb) y modifica los datos de entrada: agrega, cambia o quita datos. Revisa cómo eso afecta las predicciones. También aumenta los datos de entrenamiento y reduce los de prueba; y como extra, intenta normalizar los datos para mejorar su rendimiento.
+[**`Ejemplo 1`**](Ejemplo01/Ejemplo01.ipynb)
 
-La solución del reto 01 se encuentra [aquí.](Reto01/Reto01.ipynb)
+> **Reto 01**   
+> Usando el dataset de tu proyecto, entrénalo usando un modelo de regresión lineal y evalúa los resultados usando MSE.
+>
+> Puedes auxiliarte de una matriz de correlación en caso de necesitarlo.
 
-## Regresión polinomial
+---
+
+####  <ins>Regresión polinomial</ins>
 
 Hasta ahora hemos visto lo que pasa cuando tienes datos que se comportan como una línea recta. Pero ¿qué pasa cuando tienes datos que se curvean? 
 ![curveddata](imgassets/curveddata.png)
@@ -136,14 +157,17 @@ Si en un plot observas un patrón curvo, quizás requieres que tu regresor se cu
 
 Así es como se ve un polinomino de primer, segundo y tercer grado. Como se puede notar, las líneas se adaptan mejor y el error se reduce. Pero es importante notar que subir el grado del polinomio también conlleva sus costos: No siempre un polinomio de mayor grado puede ser lo mejor para un problema, a veces el grado del polinomio elevado hace mas mal que bien.
 
-Para ejemplificar esto, veamos [el siguiente cuaderno.](Ejemplo02/Ejemplo02.ipynb) Y con base en el ejemplo, hagamos el siguiente reto.
+Para ejemplificar esto, veamos el siguiente ejemplo:
 
-## Reto 02:
->Edita el polinomio y revisa cómo afecta las predicciones. Nota cómo un polinomio muy elevado sobre-entrenará al regresor y fallará, mientras que un polinomio muy pequeño podría no acercarse tanto a los puntos.
+[**`Ejemplo 2`**](Ejemplo02/Ejemplo02.ipynb)
+   
 
-La solución al reto se encuentra [aquí](Reto02/Reto02.ipynb)
+> **Reto 02**   
+>Usando el dataset de tu proyecto, entrénalo usando un modelo de regresión polinomial y evalúa los resultados usando MSE.
 
-## Predicción de series de tiempo
+---
+
+#### <ins>Predicción de series de tiempo</ins>
 
 Supongamos que tienes un fenómeno que constantemente cambia y no es fácil de expresar matemáticamente; por ejemplo:
 
@@ -171,9 +195,20 @@ Una vez transformada la conexión de serie de tiempo a datos de entrada, puedes 
 
 ![timeseriesregressor](imgassets/timeseriesregressor1.png)
 
-Puedes ver el código que genera estos pasos en [el siguiente ejemplo](Ejemplo03/Ejemplo03.ipynb) y puedes utilizarlo para mejorar las predicciones en el siguiente reto. 
+Puedes ver el código que genera estos pasos en el siguiente ejemplo:
 
-## Reto 03:
->![gypsy2](imgassets/gypsy2.gif)Con lo aprendido en la sesión, intenta mejorar las predicciones. Intenta con más (o menos) datos de entrada, más (o menos) datos de entrenamiento y grados polinomiales en lugar de datos lineales. 
+[**`Ejemplo 3`**](Ejemplo03/Ejemplo03.ipynb) 
 
-La solución del reto se encuentra [aquí](Reto03/Reto03.ipynb)
+> **Reto 03**   
+> Integra tu proyecto en un repositorio donde describas brevemente el problema a resolver y muestres los resultados obtenidos con los modelos que hemos estudiado hasta ahora.
+>
+> *Puedes preguntarme cualquier duda o inquietud que tengas sobre tu proyecto.*
+
+### 3. Postwork :memo:
+
+[**`Postwork Sesión 4`**](postwork.pdf)
+
+<br/>
+
+[`Anterior`](../Sesion-03/Readme.md) | [`Siguiente`](../Sesion-05/Readme.md)
+
