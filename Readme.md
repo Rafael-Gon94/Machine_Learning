@@ -29,13 +29,10 @@ Fecha | Sesión | Tema                                                          
 09/06 | 2      | [Separación, validación y evaluación para algoritmos de ML](Sesion-02/Readme.md) |
 14/06 | 3      | [Algoritmos no supervisados](Sesion-03/Readme.md)                  |
 16/06 | 4      | [Problemas de regresión](Sesion-04/Readme.md)                      |
+21/06 | 5      | [Árboles de decisión](Sesion-05/Readme.md)                         |
 
 
 <!--### Organización del módulo:
-
- - [Sesión 4: Problemas de regresión ](./Sesion-04)
-
- - [Sesión 5: Árboles de decisión ](./Sesion-05)
 
  - [Sesión 6: Clasificación y Redes Neuronales Artificiales ](./Sesion-06)
 
